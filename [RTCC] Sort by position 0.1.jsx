@@ -9,11 +9,11 @@ app.activeDocument.suspendHistory("Sort Layers by Position", "sortLayers();" );
 function sortLayers(){
 	for (i = 0; i < layers.length; i++){
 		originalNames.push(layers[i].name);
-		layers[i].name = layers[i].bounds[1];
+		layers[i].name = layers[i].bounds[1]; 
 		layersArray.push(layers[i]);    
 	}
 
-	layersArray.sort();
+	layersArray.sort(); // this doesn't work naturally as do: 231, 55, 557, 6
 
 	for (i = 0; i < layers.length; i++){
 		layersArray[i].move(layers[i], ElementPlacement.PLACEBEFORE);
